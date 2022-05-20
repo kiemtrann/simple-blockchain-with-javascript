@@ -48,11 +48,11 @@ class Blockchain {
 	}
 }
 
-let enouCoin = new Blockchain();
-enouCoin.addBlock(new Block(1, { amount: 12 }));
-enouCoin.addBlock(new Block(2, { amount: 18 }));
+let enouvo = new Blockchain();
+enouvo.addBlock(new Block(1, { amount: 12 }));
+enouvo.addBlock(new Block(2, { amount: 18 }));
 
-// enouCoin.chain[1].data = { amount: 100 };
-// enouCoin.chain[1].hash = enouCoin.chain[1].calculateHash();
-console.log(JSON.stringify(enouCoin, null, 4));
-console.log('Is blockchain valid ? ', enouCoin.isChainValid());
+enouvo.chain[1].data = { amount: 100 };
+enouvo.chain[1].hash = enouvo.chain[1].calculateHash();
+console.log(JSON.stringify(enouvo, null, 4));
+console.log('Is blockchain valid ? ', enouvo.isChainValid());

@@ -76,7 +76,6 @@ class Blockchain {
 
 let enouCoin = new Blockchain(3);
 enouCoin.createTransaction(new Transaction('address1', 'address2', 500));
-enouCoin.createTransaction(new Transaction('address2', 'address1', 50));
 
 console.log('\n Starting the miner...');
 enouCoin.minePendingTransactions('address1');
@@ -84,9 +83,9 @@ enouCoin.minePendingTransactions('address1');
 console.log(`\nBalance of address1 is`, enouCoin.getBalanceAddress('address1'));
 console.log(`\nBalance of address2 is`, enouCoin.getBalanceAddress('address2'));
 
-// enouCoin.minePendingTransactions('address1');
+enouCoin.minePendingTransactions('address1');
 
 // console.log(`\nBalance of address1 is`, enouCoin.getBalanceAddress('address1'));
 // console.log(`\nBalance of address2 is`, enouCoin.getBalanceAddress('address2'));
 
-console.log(JSON.stringify(enouCoin, null, 4));
+// console.log(JSON.stringify(enouCoin, null, 4));

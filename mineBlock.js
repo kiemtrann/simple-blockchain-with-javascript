@@ -42,28 +42,19 @@ class Blockchain {
 	addBlock(newBlock) {
 		newBlock.previousHash = this.getLatestBlock().hash;
 		newBlock.hash = newBlock.calculateHash();
+
 		console.log('start mining');
 		console.time('mineBlock');
+
 		newBlock.mineBlock(this.difficulty);
+
 		console.timeEnd('mineBlock');
 		console.log('end mining', newBlock);
+
 		this.chain.push(newBlock);
-	}
-	isChainValid() {
-		for (let i = 1; i < this.chain.length; i++) {
-			const previousBlock = this.chain[i - 1];
-			const currentBlock = this.chain[i];
-			if (currentBlock.hash !== currentBlock.calculateHash()) {
-				return false;
-			}
-			if (currentBlock.previousHash !== previousBlock.hash) {
-				return false;
-			}
-		}
-		return true;
 	}
 }
 
-let enouCoin = new Blockchain(4);
+let enouCoin = new Blockchain(3);
 enouCoin.addBlock(new Block(1, { amount: 12 }));
 enouCoin.addBlock(new Block(2, { amount: 18 }));

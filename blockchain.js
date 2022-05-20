@@ -35,7 +35,8 @@ class Blockchain {
 	}
 }
 
-let enouCoin = new Blockchain();
-enouCoin.addBlock(new Block(1, { amount: 12 }));
-enouCoin.addBlock(new Block(2, { amount: 18 }));
-console.log(JSON.stringify(enouCoin, null, 4));
+let enouvo = new Blockchain();
+enouvo.addBlock(new Block(1, { amount: 12 }));
+enouvo.addBlock(new Block(2, { amount: 18 }));
+
+console.log(JSON.stringify(enouvo, null, 4));
